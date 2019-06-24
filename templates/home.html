@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+
+    <meta charset="utf-8">
+    <title>Département Informatique </title>
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <!-- mobile specific metas
+    ================================================== -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+</head>
+{% load static  %}
+   <link rel="stylesheet" href="{% static 'css/base.css' %}">
+    <link rel="stylesheet" href="{% static 'css/vendor.css' %}">
+    <link rel="stylesheet" href="{% static 'css/main.css' %}">
+    <script src="{%  static "js/modernizr.js"  %}"></script>
+    <script src="{%  static 'js/pace.min.js' %}"></script>
+
+    <!-- favicons
+    ================================================== -->
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+{% block body  %}
+<body id="top">
+
+    <!-- pageheader
+    ================================================== -->
+    <section class="s-pageheader s-pageheader--home">
+
+        <header class="header">
+            <div class="header__content row">
+
+                <div class="header__logo">
+                    <a class="logo" href="{% url 'acceuil' %}">
+                        <img src="{% static 'images/University_of_Oran_Logo.png' %}" alt="Homepage">
+                    </a>
+                    <h1 id="dep" style="color: white">Département Informatique </h1>
+                </div> <!-- end header__logo -->
+
+
+
+
+
+
+
+                </div>  <!-- end header__search -->
+
+
+                <a class="header__toggle-menu" href="#0" title="Menu"><span> </span></a>
+
+                <nav class="header__nav-wrap">
+
+
+                    <ul class="header__nav">
+                    	<li class="current"><a href="{% url 'acceuil' %}" title="">Accueil</a></li>
+
+                    	<li class=""><a href="{% url 'admin:login' %}" title="">Secrétariat</a></li>
+
+                        <li class="">
+                            <a href="#" title="">Post-graduation</a>
+                        </li>
+                        <li class="">
+                            <a href="#" title="">Pédagogie </a>
+                        </li>
+                        <li class=""><a href="" title="">Scolarité</a></li>
+
+
+
+                    </ul> <!-- end header__nav -->
+
+
+                </nav> <!-- end header__nav-wrap -->
+
+        </header> <!-- header -->
+
+
+    <section class="s-content">
+
+        <div class="row masonry-wrap">
+            <div class="masonry">
+
+                <div class="grid-sizer"></div>
+
+                <article class="masonry__brick entry format-standard" data-aos="fade-up">
+
+                    <div class="entry__thumb" id="L1">
+                            <img src="{% static 'images/L1.jpg' %}"
+                                     alt="">
+                    </div>
+
+                    <div class="entry__text">
+                        <div class="entry__header">
+
+                            <h1 class="entry__title">1<sup>ére</sup> Année Licence</h1>
+
+                        </div>
+                        <div class="entry__meta">
+                            <span class="entry__meta-links">
+                                    {% for courrier in object_list %}
+                                    {% if courrier.parcours == 'l1' %}
+                                <a href="{{ courrier.piece_jointe.url }}">{{ courrier.objet }}</a> <br>
+                                        {% endif %}
+                                        {% endfor %}
+                            </span>
+                        </div>
+                    </div>
+
+                </article> <!-- end article -->
+
+              <!--  <article class="masonry__brick entry format-quote" data-aos="fade-up">
+
+                    <div class="entry__thumb">
+                        <blockquote>
+                                <p>Espace dédié aux étudiants </p>
+
+                                <cite>Département informatique </cite>
+                        </blockquote>
+                    </div>
+
+                </article> <!-- end article -->
+
+                <article class="masonry__brick entry format-standard" data-aos="fade-up">
+
+                    <div class="entry__thumb" id="L2">
+                            <img src="{% static 'images/L2.jpg' %}"
+                                     alt="">
+                    </div>
+
+                    <div class="entry__text" >
+                        <div class="entry__header">
+                            <h1 class="entry__title">2<sup>éme</sup> Année Licence</h1>
+                        </div>
+                        <div class="entry__meta">
+                            <span class="entry__meta-links">
+                                {% for courrier in object_list %}
+                                    {% if courrier.parcours == 'l2' %}
+                                <a href="{{ courrier.piece_jointe.url }}">{{ courrier.objet }}</a> <br>
+                                        {% endif %}
+                                        {% endfor %}
+                            </span>
+                        </div>
+                    </div>
+
+                </article> <!-- end article -->
+
+                <article class="masonry__brick entry format-standard" data-aos="fade-up">
+
+                    <div class="entry__thumb" id="L3">
+                            <img src="{% static 'images/L3.jpg' %}"
+                                     alt="">
+                    </div>
+
+                    <div class="entry__text">
+                        <div class="entry__header">
+
+                            <h1 class="entry__title">3 <sup>éme</sup> Année Licence</h1>
+
+                        </div>
+                        <div class="entry__meta">
+                            <span class="entry__meta-links">
+                                {% for courrier in object_list %}
+                                    {% if courrier.parcours == 'l3' %}
+                                <a href="{{ courrier.piece_jointe.url }}">{{ courrier.objet }}</a> <br>
+                                        {% endif %}
+                                        {% endfor %}
+                            </span>
+                        </div>
+                    </div>
+
+                </article> <!-- end article -->
+
+
+
+              <!--  <article class="masonry__brick entry format-standard" data-aos="fade-up">
+
+                    <div class="entry__thumb" id="M1">
+                            <img src="{% static 'images/M1.jpg' %}"
+                                     alt="">
+                    </div>
+
+                    <div class="entry__text">
+                        <div class="entry__header">
+
+
+                            <h1 class="entry__title"> 1<sup>ére</sup> Année Master</h1>
+
+                        </div>
+
+                        <div class="entry__meta">
+                            <span class="entry__meta-links">
+                                {% for courrier in object_list %}
+                                    {% if courrier.parcours == 'm1' %}
+                                <a href="{{ courrier.piece_jointe.url }}">{{ courrier.objet }}</a> <br>
+                                        {% endif %}
+                                        {% endfor %}
+
+                            </span>
+                        </div>
+                    </div>
+
+                </article> <!-- end article -->
+             <article class="masonry__brick entry format-standard" data-aos="fade-up">
+                    <div class="entry__thumb slider" id="M1">
+                            <img src="{% static 'images/M1.jpg' %}" alt="">
+                    </div>
+                    <div class="entry__text">
+                        <div class="entry__header">
+                            <h1 class="entry__title"> 1 <sup>ere</sup> Année Master</h1>
+
+                        </div>
+                        <div class="entry__meta">
+                            <span class="entry__meta-links">
+                                {% for courrier in object_list %}
+                                    {% if courrier.parcours == 'm1' %}
+                                <a href="{{ courrier.piece_jointe.url }}">{{ courrier.objet }}</a> <br>
+                                        {% endif %}
+                                        {% endfor %}
+                            </span>
+                        </div>
+                    </div>
+
+                </article> <!-- end article -->
+                <article class="masonry__brick entry format-standard" data-aos="fade-up">
+                    <div class="entry__thumb" id="M2">
+                            <img src="{% static 'images/M2.jpg' %}" alt="">
+                    </div>
+                    <div class="entry__text">
+                        <div class="entry__header">
+                            <h1 class="entry__title"> 2 <sup>eme</sup> Année Master</h1>
+
+                        </div>
+
+                        <div class="entry__meta">
+                            <span class="entry__meta-links">
+                                {% for courrier in object_list %}
+                                    {% if courrier.parcours == 'm2' %}
+                                <a href="{{ courrier.piece_jointe.url }}">{{ courrier.objet }}</a> <br>
+                                        {% endif %}
+                                        {% endfor %}
+                            </span>
+                        </div>
+                    </div>
+
+                </article> <!-- end article -->
+
+
+                <article class="masonry__brick entry format-gallery" data-aos="fade-up">
+
+                    <div class="entry__thumb slider" id="doctorat">
+                            <div class="slider__slide">
+                                <img src="{% static 'images/Doc.jpg' %}"
+                                         alt="">
+                            </div>
+
+                    </div>
+
+                    <div class="entry__text">
+                        <div class="entry__header">
+                            <h1 class="entry__title">Doctorat</h1>
+                        </div>
+                        <div class="entry__meta">
+                            <span class="entry__meta-links">
+                               {% for courrier in object_list %}
+                                    {% if courrier.parcours == 'd1' %}
+                                <a href="{{ courrier.piece_jointe.url }}">{{ courrier.objet }}</a> <br>
+                                        {% endif %}
+                                        {% endfor %}
+                            </span>
+                        </div>
+                    </div>
+
+                </article> <!-- end article -->
+
+</div>
+</div>
+</section>
+
+
+    </section> <!-- end s-pageheader -->
+
+    <!-- Java Script
+    ================================================== -->
+    <script src="{%  static 'js/jquery-3.2.1.min.js' %}"></script>
+    <script src="{% static 'js/plugins.js' %}"></script>
+    <script src="{% static  'js/main.js'%}"></script>
+
+</body>
+{% endblock %}
+</html>

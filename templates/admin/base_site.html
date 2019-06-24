@@ -1,0 +1,78 @@
+{% extends "admin/base.html" %}
+
+{% block title %}Département Informatique{% endblock %}
+{% block extrastyle %}
+     <style>
+    #header{
+        background-color: #7fbf7f ;
+        opacity: 0.9;
+        width: auto;
+        height: 40px;
+        padding: 10px 40px;
+        line-height: 40px;
+        color: black;
+        overflow: hidden;
+    }
+
+   #branding h1, #branding h1 a:link, #branding h1 a:visited {
+    color: black;
+}
+ul.messagelist li {
+    background-color: black;
+    display: block;
+    font-weight: 400;
+    font-size: 13px;
+    padding: 10px 10px 10px 65px;
+    margin: 0 0 10px 0;
+    color: #7fbf7f;
+    opacity: 0.9;
+}
+.module h2, .module caption, .inline-group h2 {
+    margin: 0;
+    padding: 8px;
+    font-weight: 400;
+    font-size: 13px;
+    text-align: left;
+    background: #87bf87;
+    color: #fff;
+}
+.object-tools a:link, .object-tools a:visited {
+    display: block;
+    float: left;
+    padding: 3px 12px;
+    background: #7fbf7f;
+    font-weight: 400;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: #fff;
+}
+
+    div.breadcrumbs {
+    background: #7fbf7f;
+    padding: 10px 40px;
+    border: none;
+    font-size: 14px;
+    color: #ffffff;
+    text-align: left;
+}
+.button, input[type=submit], input[type=button], .submit-row input, a.button {
+    background: #7fbf7f;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    color: #fff;
+    cursor: pointer;
+}
+
+     a {
+                color : azure;
+    }
+
+    </style>
+{% endblock %}
+{% block branding %}
+<h1 id="site-name"><a href="{% url 'admin:index' %}">Service secretariat </a></h1>
+{% endblock %}
+
+{% block nav-global %}{% endblock %}
