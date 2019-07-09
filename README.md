@@ -1,5 +1,5 @@
 # Secretariat
-Application de gestion de Scolarité (département d'Informatique)
+Application de gestion de Secretariat (département d'Informatique)
 # tools 
 * FrameWork Django 
 * Langage Python 
